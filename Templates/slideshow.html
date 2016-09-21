@@ -1,0 +1,42 @@
+
+
+<div class="slider">
+   <center>
+    <img ng-repeat="slide in response" class="img-responsive slide slide-animation nonDraggableImage"
+         ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+         ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.source}}" style="max-width:100%;width:100%;height:100%;">
+    </center>
+    <a class="arrow prev"  ng-click="nextSlide()"></a>
+    <a class="arrow next"  ng-click="prevSlide()"></a>
+    <nav class="nav">
+        <div class="wrapper">
+            <ul class="dots">
+                <li class="dot" ng-repeat="slide in response">
+                    <a ng-class="{'active':isCurrentSlideIndex($index)}"
+                       ng-click="setCurrentSlideIndex($index);">{{slide.name}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--
+<div class="container"> 
+   
+    <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+      
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-ng-repeat="img in response" class="{active : (img === 0)}" data-slide-to="{{img}}"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div ng-class="{item: true, active : (img === 0)}" data-ng-repeat="img in response">
+            <img data-ng-src="{{img.source}}" >
+          <div class="container">
+            <div class="carousel-caption"> </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
+    </div>
+
+   
+</div>    
+-->
